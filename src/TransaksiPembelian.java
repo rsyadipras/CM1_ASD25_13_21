@@ -23,6 +23,18 @@ public class TransaksiPembelian {
 
     // Menu 2
     void tampilDataTransaksi() {
-
+        System.out.println("=== Data Transaksi Pembelian ===");
+        for (TransaksiPembelian tmp : listTransaksiPembelians) {
+            if (tmp != null) {
+                System.out.println("Kode Transaksi    : " + tmp.kodeTransaksi);
+                System.out.println("Nama Pembeli      : " + tmp.namaPembeli);
+                System.out.println("Tanggal Pembelian : " + tmp.tanggalPembelian);
+                System.out.println("Quantity          : " + tmp.qty);
+                System.out.println("Barang            : " + tmp.brg.nama);
+                System.out.println("Harga Satuan      : " + tmp.brg.harga);
+                System.out.println("Total Harga       : " + (tmp.qty * tmp.brg.harga));
+                System.out.println("--------------------------------");
+            }
+        }
     }
 }

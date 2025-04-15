@@ -4,6 +4,7 @@ public class MainSystem {
     public static void main(String[] args) {
         Scanner input1321 = new Scanner(System.in);
 
+        ServiceClass systemService = new ServiceClass();
         Barang[] listBarang = new Barang[5];
         TransaksiPembelian[] listTransaksiPembelian = new TransaksiPembelian[5];
 
@@ -18,11 +19,11 @@ public class MainSystem {
         dataBarang.setListBarang(listBarang);
 
         // Data awal transaksi
-        listTransaksiPembelian[0] = new TransaksiPembelian(null, null, null, 0, dataBarang);
-        listTransaksiPembelian[1] = new TransaksiPembelian(null, null, null, 0, dataBarang);
-        listTransaksiPembelian[2] = new TransaksiPembelian(null, null, null, 0, dataBarang);
-        listTransaksiPembelian[3] = new TransaksiPembelian(null, null, null, 0, dataBarang);
-        listTransaksiPembelian[4] = new TransaksiPembelian(null, null, null, 0, dataBarang);
+        listTransaksiPembelian[0] = new TransaksiPembelian(null, null, null, 0, listBarang[0]);
+        listTransaksiPembelian[1] = new TransaksiPembelian(null, null, null, 0, listBarang[1]);
+        listTransaksiPembelian[2] = new TransaksiPembelian(null, null, null, 0, listBarang[2]);
+        listTransaksiPembelian[3] = new TransaksiPembelian(null, null, null, 0, listBarang[3]);
+        listTransaksiPembelian[4] = new TransaksiPembelian(null, null, null, 0, listBarang[4]);
 
         TransaksiPembelian dataTransaksiPembelian = new TransaksiPembelian();
         dataTransaksiPembelian.setListTransaksiPembelian(listTransaksiPembelian);
@@ -47,8 +48,14 @@ public class MainSystem {
                     dataTransaksiPembelian.tampilDataTransaksi();
                     break;
                 case 3:
+                    System.out.print("Masukkan nama barang yang ingin dicari pada transaksi : ");
+                    String namaBarang = input1321.nextLine();
+                    systemService.sequantialSearching(namaBarang, listTransaksiPembelian);
                     break;
                 case 4:
+                    System.out.println("Pengurutan nama barang pada transaksi berdasarkan abjad : ");
+                    systemService.selectionSort(dataTransaksiPembelian);
+                    dataTransaksiPembelian.tampilDataTransaksi();
                     break;
                 case 5:
                     System.out.println("Terima Kasih.");
