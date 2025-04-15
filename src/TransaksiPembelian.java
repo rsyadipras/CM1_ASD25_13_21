@@ -3,6 +3,7 @@ public class TransaksiPembelian {
     int qty;
     Barang brg;
 
+    ServiceClass systemService = new ServiceClass();
     TransaksiPembelian[] listTransaksiPembelians = new TransaksiPembelian[5];
 
     TransaksiPembelian() {
