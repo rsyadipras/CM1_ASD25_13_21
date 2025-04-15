@@ -16,6 +16,7 @@ public class Barang {
         this.harga = harga;
     }
 
+    // Menu 1
     void tampilDataBarang() {
         for (Barang tmp : listBarang) {
             System.out.println("Kode Barang : " + this.kodeBarang);
