@@ -4,17 +4,17 @@ public class MainSystem {
     public static void main(String[] args) {
         Scanner input1321 = new Scanner(System.in);
 
-        Barang dataMain = new Barang();
+        Barang[] listBarang = new Barang[5];
+
         // Data awal
-        Barang data1 = new Barang("Br001", "Leo Kripik", "Makanan", 10, 1000);
-        Barang data2 = new Barang("Br002", "You C1000 Botol", "Minuman",
-                10, 7000);
-        Barang data3 = new Barang("Br003", "Teh Pucuk Botol", "Minuman",
-                10, 4000);
-        Barang data4 = new Barang("Br004", "Rinso Cair", "Sabun", 10,
-                7000);
-        Barang data5 = new Barang("Br005", "Mama Lemon Cair", "Sabun", 10,
-                1000);
+        listBarang[0] = new Barang("Br001", "Leo Kripik", "Makanan", 10, 1000);
+        listBarang[1] = new Barang("Br002", "You C1000 Botol", "Minuman", 10, 7000);
+        listBarang[2] = new Barang("Br003", "Teh Pucuk Botol", "Minuman", 10, 4000);
+        listBarang[3] = new Barang("Br004", "Rinso Cair", "Sabun", 10, 7000);
+        listBarang[4] = new Barang("Br005", "Mama Lemon Cair", "Sabun", 10, 1000);
+
+        Barang dataBarang = new Barang();
+        dataBarang.setListBarang(listBarang);
 
         while (true) {
             System.out.println("\n======= Toko Manasuka =======");
@@ -30,7 +30,7 @@ public class MainSystem {
 
             switch (pilihan) {
                 case 1:
-                    dataMain.tampilDataBarang();
+                    dataBarang.tampilDataBarang();
                     break;
                 case 2:
                     break;

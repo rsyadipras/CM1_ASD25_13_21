@@ -16,14 +16,18 @@ public class Barang {
         this.harga = harga;
     }
 
+    void setListBarang(Barang[] lsBarang) {
+        listBarang = lsBarang;
+    }
+
     // Menu 1
     void tampilDataBarang() {
         for (Barang tmp : listBarang) {
-            System.out.println("Kode Barang : " + this.kodeBarang);
-            System.out.println("Nama Barang : " + this.nama);
-            System.out.println("Kategori : " + this.kategori);
-            System.out.println("Stock : " + this.stok);
-            System.out.println("Harga : " + this.harga);
+            System.out.println("Kode Barang : " + tmp.kodeBarang);
+            System.out.println("Nama Barang : " + tmp.nama);
+            System.out.println("Kategori : " + tmp.kategori);
+            System.out.println("Stock : " + tmp.stok);
+            System.out.println("Harga : " + tmp.harga);
         }
     }
 }
