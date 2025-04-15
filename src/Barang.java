@@ -10,7 +10,8 @@ public class Barang {
         this.harga = harga;
     }
 
+    // Menu 1
     void tampilDataBarang() {
-
+        
     }
 }
