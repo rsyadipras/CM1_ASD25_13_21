@@ -3,8 +3,6 @@ import java.util.Scanner;
 public class MainSystem {
     public static void main(String[] args) {
         Scanner input1321 = new Scanner(System.in);
-
-        ServiceClass systemService = new ServiceClass();
         Barang[] listBarang = new Barang[5];
 
         // Data awal barang
@@ -17,8 +15,9 @@ public class MainSystem {
         Barang dataBarang = new Barang();
         dataBarang.setListBarang(listBarang);
 
-        // Data awal transaksi
+        ServiceClass systemService = new ServiceClass();
 
+        // Data awal transaksi
         systemService.tambahDataTransaksi(new TransaksiPembelian("Tr001", "Santi", "21-04-2004", 1, listBarang[0]));
         systemService.tambahDataTransaksi(new TransaksiPembelian("Tr002", "Vani", "21-04-2004", 2, listBarang[1]));
         systemService.tambahDataTransaksi(new TransaksiPembelian("Tr003", "Siska", "23-04-2004", 3, listBarang[2]));
@@ -50,11 +49,11 @@ public class MainSystem {
                 case 3:
                     System.out.print("Masukkan nama barang yang ingin dicari pada transaksi : ");
                     String namaBarang = input1321.nextLine();
-                    systemService.sequantialSearching(namaBarang, systemService.Trs);
+                    systemService.sequantialSearching(namaBarang, systemService.Trs, listBarang);
                     break;
                 case 4:
                     System.out.println("Pengurutan nama barang pada transaksi berdasarkan abjad : ");
-                    systemService.selectionSort(dataTransaksiPembelian);
+                    systemService.selectionSort();
                     dataTransaksiPembelian.tampilDataTransaksi();
                     break;
                 case 5:

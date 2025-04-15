@@ -3,11 +3,9 @@ public class TransaksiPembelian {
     int qty;
     Barang brg;
 
-    ServiceClass systemService = new ServiceClass();
     TransaksiPembelian[] listTransaksiPembelians = new TransaksiPembelian[5];
 
     TransaksiPembelian() {
-
     }
 
     TransaksiPembelian(String kodeTransaksi, String namaPembeli, String tanggalPembelian, int qty, Barang brg) {

@@ -12,44 +12,48 @@ public class ServiceClass {
     }
 
     // Sort
-    void selectionSort(TransaksiPembelian transaksiObj) {
-        TransaksiPembelian[] listTransaksi = transaksiObj.listTransaksiPembelians;
-
-        for (int i = 0; i < listTransaksi.length - 1; i++) {
+    void selectionSort() {
+        for (int i = 0; i < Trs.length - 1; i++) {
             int idxMin = i;
 
-            for (int j = i + 1; j < listTransaksi.length; j++) {
-                if (listTransaksi[j].brg.nama.compareTo(listTransaksi[idxMin].brg.nama) < 0) {
+            for (int j = i + 1; j < Trs.length; j++) {
+                if (Trs[j].brg.nama.compareTo(Trs[idxMin].brg.nama) < 0) {
                     idxMin = j;
                 }
             }
-
-            TransaksiPembelian temp = listTransaksi[idxMin];
-            listTransaksi[idxMin] = listTransaksi[i];
-            listTransaksi[i] = temp;
+            TransaksiPembelian temp = Trs[idxMin];
+            Trs[idxMin] = Trs[i];
+            Trs[i] = temp;
         }
-
     }
 
     // Searching
-    void sequantialSearching(String namaBarang, TransaksiPembelian[] listTransaksi) {
+    void sequantialSearching(String namaBarang, TransaksiPembelian[] listTransaksi, Barang[] lstBrg) {
         boolean found = false;
-
         for (int i = 0; i < listTransaksi.length; i++) {
             if (listTransaksi[i].brg.nama.equalsIgnoreCase(namaBarang)) {
                 found = true;
 
-                System.out.println("\nTransaksi dengan barang '" + namaBarang + "' ditemukan:");
+                System.out.println("\n=== Transaksi dengan barang '" + namaBarang + "' ditemukan: ===");
                 System.out.println("Kode Transaksi    : " + listTransaksi[i].kodeTransaksi);
                 System.out.println("Nama Pembeli      : " + listTransaksi[i].namaPembeli);
                 System.out.println("Tanggal Pembelian : " + listTransaksi[i].tanggalPembelian);
                 System.out.println("Quantity          : " + listTransaksi[i].qty);
                 System.out.println("Barang            : " + listTransaksi[i].brg.nama);
                 System.out.println("Harga Satuan      : " + listTransaksi[i].brg.harga);
-                System.out.println("Total Harga       : " + (listTransaksi[i].qty * listTransaksi[i].brg.harga));
+                System.out.println("Total Harga       : " + (listTransaksi[i].qty * listTransaksi[i].brg.harga) + "\n");
+
+            }
+
+            if (lstBrg[i].nama.equalsIgnoreCase(namaBarang)) {
+                System.out.println("=== Detail Barang ===");
+                System.out.println("Kode Barang : " + lstBrg[i].kodeBarang);
+                System.out.println("Nama Barang : " + lstBrg[i].nama);
+                System.out.println("Kategori    : " + lstBrg[i].kategori);
+                System.out.println("Stock       : " + lstBrg[i].stok);
+                System.out.println("Harga       : " + lstBrg[i].harga);
             }
         }
-
         if (!found) {
             System.out.println("Tidak ditemukan transaksi dengan barang '" + namaBarang + "'");
         }
