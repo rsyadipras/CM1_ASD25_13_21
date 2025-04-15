@@ -22,12 +22,14 @@ public class Barang {
 
     // Menu 1
     void tampilDataBarang() {
+        System.out.println("Kode \t\t\tNama Barang \t\t\tKategori \t\tStock \t\t\tHarga");
         for (Barang tmp : listBarang) {
-            System.out.println("Kode Barang : " + tmp.kodeBarang);
-            System.out.println("Nama Barang : " + tmp.nama);
-            System.out.println("Kategori : " + tmp.kategori);
-            System.out.println("Stock : " + tmp.stok);
-            System.out.println("Harga : " + tmp.harga);
+            System.out.print(tmp.kodeBarang + "\t\t\t");
+            System.out.print(tmp.nama + "\t\t\t");
+            System.out.print(tmp.kategori + "\t\t\t");
+            System.out.print(tmp.stok + "\t\t\t");
+            System.out.print(tmp.harga + "\t\t\t\n");
+
         }
     }
 }

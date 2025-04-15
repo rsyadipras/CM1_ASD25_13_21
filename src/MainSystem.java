@@ -19,11 +19,11 @@ public class MainSystem {
         dataBarang.setListBarang(listBarang);
 
         // Data awal transaksi
-        listTransaksiPembelian[0] = new TransaksiPembelian(null, null, null, 0, listBarang[0]);
-        listTransaksiPembelian[1] = new TransaksiPembelian(null, null, null, 0, listBarang[1]);
-        listTransaksiPembelian[2] = new TransaksiPembelian(null, null, null, 0, listBarang[2]);
-        listTransaksiPembelian[3] = new TransaksiPembelian(null, null, null, 0, listBarang[3]);
-        listTransaksiPembelian[4] = new TransaksiPembelian(null, null, null, 0, listBarang[4]);
+        listTransaksiPembelian[0] = new TransaksiPembelian("Tr001", "Santi", "21-04-2004", 1, listBarang[0]);
+        listTransaksiPembelian[1] = new TransaksiPembelian("Tr002", "Vani", "21-04-2004", 2, listBarang[1]);
+        listTransaksiPembelian[2] = new TransaksiPembelian("Tr003", "Siska", "23-04-2004", 3, listBarang[2]);
+        listTransaksiPembelian[3] = new TransaksiPembelian("Tr004", "MeiMei", "23-04-2004", 1, listBarang[3]);
+        listTransaksiPembelian[4] = new TransaksiPembelian("Tr005", "Ihsan", "24-04-2004", 1, listBarang[4]);
 
         TransaksiPembelian dataTransaksiPembelian = new TransaksiPembelian();
         dataTransaksiPembelian.setListTransaksiPembelian(listTransaksiPembelian);
@@ -59,7 +59,8 @@ public class MainSystem {
                     break;
                 case 5:
                     System.out.println("Terima Kasih.");
-                    break;
+                    input1321.close();
+                    return;
                 default:
                     System.out.println("Menu tidak tersedia.");
             }
