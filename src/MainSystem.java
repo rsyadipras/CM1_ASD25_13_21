@@ -5,8 +5,9 @@ public class MainSystem {
         Scanner input1321 = new Scanner(System.in);
 
         Barang[] listBarang = new Barang[5];
+        TransaksiPembelian[] listTransaksiPembelian = new TransaksiPembelian[5];
 
-        // Data awal
+        // Data awal barang
         listBarang[0] = new Barang("Br001", "Leo Kripik", "Makanan", 10, 1000);
         listBarang[1] = new Barang("Br002", "You C1000 Botol", "Minuman", 10, 7000);
         listBarang[2] = new Barang("Br003", "Teh Pucuk Botol", "Minuman", 10, 4000);
@@ -15,6 +16,16 @@ public class MainSystem {
 
         Barang dataBarang = new Barang();
         dataBarang.setListBarang(listBarang);
+
+        // Data awal transaksi
+        listTransaksiPembelian[0] = new TransaksiPembelian("Tr001", "Santi", "21-04-2004", 1, listBarang[0]);
+        listTransaksiPembelian[1] = new TransaksiPembelian("Tr002", "Vani", "21-04-2004", 2, listBarang[1]);
+        listTransaksiPembelian[2] = new TransaksiPembelian("Tr003", "Siska", "23-04-2004", 3, listBarang[2]);
+        listTransaksiPembelian[3] = new TransaksiPembelian("Tr004", "MeiMei", "23-04-2004", 1, listBarang[3]);
+        listTransaksiPembelian[4] = new TransaksiPembelian("Tr005", "Ihsan", "24-04-2004", 1, listBarang[4]);
+
+        TransaksiPembelian dataTransaksiPembelian = new TransaksiPembelian();
+        dataTransaksiPembelian.setListTransaksiPembelian(listTransaksiPembelian);
 
         while (true) {
             System.out.println("\n======= Toko Manasuka =======");
@@ -33,6 +44,7 @@ public class MainSystem {
                     dataBarang.tampilDataBarang();
                     break;
                 case 2:
+                    dataTransaksiPembelian.tampilDataTransaksi();
                     break;
                 case 3:
                     break;
@@ -40,7 +52,8 @@ public class MainSystem {
                     break;
                 case 5:
                     System.out.println("Terima Kasih.");
-                    break;
+                    input1321.close();
+                    return;
                 default:
                     System.out.println("Menu tidak tersedia.");
             }
