@@ -12,21 +12,20 @@ public class ServiceClass {
     }
 
     // Sort
-    void selectionSort(TransaksiPembelian transaksiObj) {
-        TransaksiPembelian[] listTransaksi = transaksiObj.listTransaksiPembelians;
+    void selectionSort() {
 
-        for (int i = 0; i < listTransaksi.length - 1; i++) {
+        for (int i = 0; i < Trs.length - 1; i++) {
             int idxMin = i;
 
-            for (int j = i + 1; j < listTransaksi.length; j++) {
-                if (listTransaksi[j].brg.nama.compareTo(listTransaksi[idxMin].brg.nama) < 0) {
+            for (int j = i + 1; j < Trs.length; j++) {
+                if (Trs[j].brg.nama.compareTo(Trs[idxMin].brg.nama) < 0) {
                     idxMin = j;
                 }
             }
 
-            TransaksiPembelian temp = listTransaksi[idxMin];
-            listTransaksi[idxMin] = listTransaksi[i];
-            listTransaksi[i] = temp;
+            TransaksiPembelian temp = Trs[idxMin];
+            Trs[idxMin] = Trs[i];
+            Trs[i] = temp;
         }
 
     }

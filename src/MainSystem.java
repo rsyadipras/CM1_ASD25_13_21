@@ -54,7 +54,7 @@ public class MainSystem {
                     break;
                 case 4:
                     System.out.println("Pengurutan nama barang pada transaksi berdasarkan abjad : ");
-                    systemService.selectionSort(dataTransaksiPembelian);
+                    systemService.selectionSort();
                     dataTransaksiPembelian.tampilDataTransaksi();
                     break;
                 case 5:

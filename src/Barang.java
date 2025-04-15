@@ -20,6 +20,7 @@ public class Barang {
         listBarang = lsBarang;
     }
 
+
     // Menu 1
     void tampilDataBarang() {
         System.out.println("Kode \t\t\tNama Barang \t\t\tKategori \t\tStock \t\t\tHarga");
